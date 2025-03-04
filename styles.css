@@ -36,3 +36,19 @@ button {
 button:hover {
     background: #218838;
 }
+ul {
+    list-style: none;
+    padding: 0;
+}
+li {
+    background: #eee;
+    margin: 5px 0;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 5px;
+}
+.completed {
+    text-decoration: line-through;
+    color: gray;
+}
