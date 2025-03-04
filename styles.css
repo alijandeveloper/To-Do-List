@@ -1,3 +1,4 @@
+/* style.css */
 body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
@@ -16,30 +17,85 @@ body {
     width: 350px;
     text-align: center;
 }
+.theme-toggle {
+    cursor: pointer; /* Fix: Cursor pointer */
+    font-size: 20px;
+    border: none;
+    background: none;
+    outline: none;
+}
 .dark-mode {
     background-color: #333;
     color: white;
 }
+
+.dark-mode .container {
+    background: #444;
+}
+
+.dark-mode input {
+    background-color: #555;
+    color: white;
+    border: 1px solid #777;
+}
+
+.dark-mode input::placeholder {
+    color: #bbb;
+}
+
+.dark-mode li {
+    background: #555;
+    color: white;
+}
+
+.dark-mode .completed {
+    color: #bbb;
+}
+
 .input-container {
     display: flex;
     gap: 10px;
 }
+.input-container {
+    display: flex;
+    align-items: center; /* Vertical alignment fix */
+    gap: 10px;
+}
+
+.input-container input {
+    height: 40px; /* Button ke barabar height */
+    padding: 0 10px; /* Sirf horizontal padding */
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    flex: 1; /* Full width adjust */
+}
+
+.input-container button {
+    height: 40px; /* Button aur input ka same height */
+    padding: 0 15px; /* Horizontal padding */
+    font-size: 16px;
+    border-radius: 5px;
+}
+.btn1{
+    margin-top: -1px;
+}
 input {
-    flex: 1;
-    padding: 10px;
+    height: 40px; /* Button ke barabar height */
+    padding: 8px; /* Zyada padding hatane ke liye */
+    font-size: 16px; /* Text readable rahe */
     border: 1px solid #ddd;
     border-radius: 5px;
 }
+
 button {
+    margin-top: 20px;
     padding: 10px;
     background: #28a745;
     color: white;
     border: none;
     cursor: pointer;
     border-radius: 5px;
-}
-button:hover {
-    background: #218838;
 }
 ul {
     list-style: none;

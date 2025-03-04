@@ -1,9 +1,10 @@
+// script.js
 document.addEventListener("DOMContentLoaded", () => {
     const taskInput = document.getElementById("taskInput");
     const addTaskButton = document.getElementById("addTask");
     const taskList = document.getElementById("taskList");
     const filters = document.querySelectorAll(".filter-btn");
-    const themeToggle = document.getElementById("themeToggle");
+    const themeToggle = document.querySelector(".theme-toggle");
     
     let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
     
@@ -58,15 +59,20 @@ document.addEventListener("DOMContentLoaded", () => {
             renderTasks(e.target.dataset.filter);
         });
     });
-    
+
+    // Fix: Dark Mode Toggle Working Now
     themeToggle.addEventListener("click", () => {
         document.body.classList.toggle("dark-mode");
-        localStorage.setItem("theme", document.body.classList.contains("dark-mode") ? "dark" : "light");
+        const isDarkMode = document.body.classList.contains("dark-mode");
+        localStorage.setItem("darkMode", isDarkMode ? "enabled" : "disabled");
+        themeToggle.textContent = isDarkMode ? "☀️" : "🌙"; // Change icon
     });
-    
-    if (localStorage.getItem("theme") === "dark") {
+
+    // Ensure dark mode persists
+    if (localStorage.getItem("darkMode") === "enabled") {
         document.body.classList.add("dark-mode");
+        themeToggle.textContent = "☀️";
     }
-    
+
     renderTasks();
 });
